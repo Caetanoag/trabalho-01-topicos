@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponto X Círculo</title>
+</head>
+<body>
+    <canvas Id="Trabalho" width="600" height="800"></canvas>
+    <script>
+        const ctx=(document.getElementById("Trabalho")).getContext("2d");
+        const mouse={x:0,y:0};
+        document.onmousemove=function(event)
+        {   mouse.x=event.clientX
+            mouse.y=event.clientY;
+        }
+            const radiusp=parseInt(prompt('raio do ponto'));
+            const corp=parseInt(prompt('Escolha uma cor'));
+            ctx.fillStyle=corp;
+            ctx.beginPath();
+            ctx.arc(mouse.x,mouse.y,radiusp,0,Math.PI*2);
+            ctx.fill();
+            const xc=parseInt(prompt('x do ponto'));
+            const yc=parseInt(prompt('y do ponto'));
+            const radiusc=parseInt(prompt('raio do ponto'));
+            const corc=parseInt(prompt('Escolha uma cor'));
+            ctx.strokeStyle=corc;
+            ctx.beginPath();
+            ctx.arc(xc,yc,radiusc,0,Math.PI*2);
+            ctx.stroke();
+    </script>
+</body>
+</html>
